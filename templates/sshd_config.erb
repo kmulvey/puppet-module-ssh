@@ -75,6 +75,15 @@ Subsystem sftp /usr/lib/openssh/sftp-server
 
 UsePAM yes
 
+ClientAliveInterval 300
+ClientAliveCountMax 0
+HostbasedAuthentication no
+PermitRootLogin no
+Banner /etc/banner
+PermitEmptyPasswords no
+LogLevel INFO
+VerifyReverseMapping yes
+
 <% if allowed_users.any? %>
 AllowUsers <%= allowed_users.join(" ") %>
 <% end %>
